@@ -38,8 +38,8 @@ while True:
 
 ### Evidence
 
+https://iad.cdn.nv.instructuremedia.com/originals/o-5rHQz7CxZNjN6wtBEeMQcXxsQk5kA9r6/transcodings/t-5rQwrZyxD5Dfk3fN3EBfTk3tWPozGAF2.mp4?&Expires=1664374995&Signature=DOKfQ60o9le-rT9BksZlDIKUNYTd6KXlkw~mapKYPEP1KZro9unWSBlwYqCU2Jae0Y-GCpSjKmSCh-wMWXFrGdAYVhQ4u~915OajmZROQrZ9Wm8Qss6QEnIDwXKgVlOVFv4nx2ctZujzRkirjMwt1LE2P3ekONw2Lzc3Ui2ik5X2FkdvA0EEj19A6tUUcufW8idjbRbp3a~yb7qBghNcusRCW9HbyckOIpaf3xikH1mDz-zw493DIM~1tLIOtwdHtBdA-H1QwWoliXICc-K5YbCd7~PFB0up0EZVxqBcXX4w1-keelSSav6AAL2JokwRZiwRNx6BCEV9A4Jxts1SSQ__&Key-Pair-Id=APKAJLP4NHW7VFATZNDQ
 
-![spinningMetro_Optimized](https://user-images.githubusercontent.com/54641488/192549584-18285130-2e3b-4631-8005-0792c2942f73.gif)
 
 
 And here is how you should give image credit to someone, if you use their work:
