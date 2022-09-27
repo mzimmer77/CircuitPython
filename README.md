@@ -111,8 +111,7 @@ Code goes here
 ```
 
 ### Evidence
-
-Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
+https://mail.google.com/mail/u/0?ui=2&ik=6c4263679f&attid=0.1&permmsgid=msg-f:1745134024592886924&th=1837f626354e8c8c&view=att&disp=safe
 
 ### Wiring
 
