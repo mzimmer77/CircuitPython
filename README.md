@@ -11,7 +11,7 @@ This repository will actually serve as a aid to help you get started with your o
 ## Hello_CircuitPython
 
 ### Description & Code
-Description goes here
+For thisassignment we had to learn vscode and we made a button blink red
 
 Here's how you make code look like code:
 
