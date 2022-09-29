@@ -38,7 +38,10 @@ while True:
 
 ### Evidence
 
-https://iad.cdn.nv.instructuremedia.com/originals/o-5rHQz7CxZNjN6wtBEeMQcXxsQk5kA9r6/transcodings/t-5rQwrZyxD5Dfk3fN3EBfTk3tWPozGAF2.mp4?&Expires=1664374995&Signature=DOKfQ60o9le-rT9BksZlDIKUNYTd6KXlkw~mapKYPEP1KZro9unWSBlwYqCU2Jae0Y-GCpSjKmSCh-wMWXFrGdAYVhQ4u~915OajmZROQrZ9Wm8Qss6QEnIDwXKgVlOVFv4nx2ctZujzRkirjMwt1LE2P3ekONw2Lzc3Ui2ik5X2FkdvA0EEj19A6tUUcufW8idjbRbp3a~yb7qBghNcusRCW9HbyckOIpaf3xikH1mDz-zw493DIM~1tLIOtwdHtBdA-H1QwWoliXICc-K5YbCd7~PFB0up0EZVxqBcXX4w1-keelSSav6AAL2JokwRZiwRNx6BCEV9A4Jxts1SSQ__&Key-Pair-Id=APKAJLP4NHW7VFATZNDQ
+
+
+https://user-images.githubusercontent.com/112961434/193046589-a9bb4d3b-664a-4453-8a38-d1be18a54cc4.mp4
+
 
 
 
@@ -91,7 +94,10 @@ while True:
 
 ### Evidence
 
-https://iad.cdn.nv.instructuremedia.com/originals/o-5YnGRJjECHz2rELYMEnSKeKAbSwqC8Wk/transcodings/t-5YwxWG74a9m7XzPXDerVhP38Fr7X8omx.mp4?&Expires=1664375418&Signature=sp-fOIDnlGlWK8Vd5s0BrBiREQz4I2LMfssDhpHeYqYUGVtCklYarHgy3lptLBlGQB764uKpawIZHFoxuyAqSVZRyCtvKndF2J4I32IzrEgJqd9qEl-DF~b51ltiiF6VvrPZyeKy1iIO8bsUjWjbpfxQlsQs5K5vnY2bgUeZH8OTG-rFNM4opWdh8TkchHwOntpUTB3S-wFBYnNkZ8zedF9rJFMYLEFD0ZdLGmheeRw7X4gBvgdRW7CPAN3hK6t3hDm2vbK1G9GUn0iWOnnzEYXLOWzDLMvbSSdUI0XXbgXsZgJx95Q4XfNk0OiLfUWPkyhbBQccGY6oZ6-oTrdetA__&Key-Pair-Id=APKAJLP4NHW7VFATZNDQ
+
+https://user-images.githubusercontent.com/112961434/193046467-25b1430d-01c0-4595-9e3e-dfa70ef56894.mp4
+
+
 
 ### Wiring
 ![image](https://user-images.githubusercontent.com/112961434/192555694-4ad0eed2-1c11-4fa1-b789-35e882e869b6.png)
@@ -170,11 +176,61 @@ I got some help from Mr H in order to learn python and vscode.
 
 ```python
 Code goes here
+#Grant Gastinger
+#lcdAssignment based off 
+#Uses an LCD to display the amount of times a button is clicked. Reverses if switch is flipped.
 
+import board
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+import time
+from digitalio import DigitalInOut, Direction, Pull
+
+# get and i2c object
+i2c = board.I2C()
+btn = DigitalInOut(board.D2)
+btn.direction = Direction.INPUT
+btn.pull = Pull.UP
+clickCount = 0
+
+switch = DigitalInOut(board.D7)
+switch.direction = Direction.INPUT
+switch.pull = Pull.UP
+
+# some LCDs are 0x3f... some are 0x27...
+lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
+
+lcd.print("Grant")
+
+while True:
+    if not switch.value:
+        if not btn.value:
+            lcd.clear()
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("Click Count:")
+            lcd.set_cursor_pos(0,13)
+            clickCount = clickCount + 1
+            lcd.print(str(clickCount))
+        else:
+            pass
+    else:
+        if not btn.value:
+            lcd.clear()
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("Click Count:")
+            lcd.set_cursor_pos(0,13)
+            clickCount = clickCount - 1
+            lcd.print(str(clickCount))
+        else:
+            pass
+    time.sleep(0.1) # sleep for debounce
 ```
 
 ### Evidence
-https://mail.google.com/mail/u/0?ui=2&ik=6c4263679f&attid=0.1&permmsgid=msg-f:1745134024592886924&th=1837f626354e8c8c&view=att&disp=safe
+
+
+https://user-images.githubusercontent.com/112961434/193046801-679b4d02-3eee-4f74-8c34-5ac0fc597b24.mp4
+
 
 ### Wiring
 
