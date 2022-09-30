@@ -175,7 +175,31 @@ this assignment was difficult because of the fading of the light
 
 ```python
 Code goes here
-#Grant Gastinger
+
+```
+
+### Evidence
+
+
+https://user-images.githubusercontent.com/112961434/193046801-679b4d02-3eee-4f74-8c34-5ac0fc597b24.mp4
+
+
+### Wiring
+![193033429-e5198fd6-79fd-4952-a702-64e0c3bba90c](https://user-images.githubusercontent.com/112961434/193047265-43d4e611-0c68-453c-8ac3-ebb8ee76e326.png)
+###thanks elias https://github.com/egarcia28/CircuitPython
+### Reflection
+this was by far the hardest assignment but I had done something like this last year and my prior knowledge along with the help of classmates gave me what I needed to understand and complete the assignment.
+
+
+
+
+## NextAssignment
+
+### Description & Code
+
+```python
+Code goes here
+#Grant Gastinger https://github.com/ggastin30/CPython
 #lcdAssignment based off 
 #Uses an LCD to display the amount of times a button is clicked. Reverses if switch is flipped.
 
@@ -223,30 +247,6 @@ while True:
         else:
             pass
     time.sleep(0.1) # sleep for debounce
-```
-
-### Evidence
-
-
-https://user-images.githubusercontent.com/112961434/193046801-679b4d02-3eee-4f74-8c34-5ac0fc597b24.mp4
-
-
-### Wiring
-![193033429-e5198fd6-79fd-4952-a702-64e0c3bba90c](https://user-images.githubusercontent.com/112961434/193047265-43d4e611-0c68-453c-8ac3-ebb8ee76e326.png)
-###thanks elias https://github.com/egarcia28/CircuitPython
-### Reflection
-this was by far the hardest assignment but I had done something like this last year and my prior knowledge along with the help of classmates gave me what I needed to understand and complete the assignment.
-
-
-
-
-## NextAssignment
-
-### Description & Code
-
-```python
-Code goes here
-
 ```
 
 ### Evidence
