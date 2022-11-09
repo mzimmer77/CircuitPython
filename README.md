@@ -240,6 +240,41 @@ this was by far the hardest assignment but I had done something like this last y
 
 
 
+## Motor Control
+
+### Description & Code
+we had to make a potentiometer control a DC motor while using a battery pack.
+```python
+Code goes here
+#thanks https://github.com/willhunt914
+#thanks https://github.com/nbednar2929
+import board #import files
+import time
+from analogio import AnalogOut, AnalogIn
+import simpleio
+
+motor = AnalogOut(board.A1) #motor ouput 
+ptmr = AnalogIn(board.A0) #potentiometer input
+
+while True:
+    print(simpleio.map_range(ptmr.value, 96, 65520, 0, 65535)) #print my potentiometer value
+    motor.value = int(simpleio.map_range(ptmr.value, 96, 65520, 0, 65535)) #push potentiometer value to motor
+    time.sleep(.1) #print delay 
+```
+
+### Evidence
+
+
+https://user-images.githubusercontent.com/112961434/200870809-63e3a476-a707-4634-a149-70ff03f4fc09.mp4
+
+
+### Wiring
+![image](https://user-images.githubusercontent.com/112961434/200871929-46aee14c-0fb9-48fa-a15a-a6ea1738df8c.png)
+https://github.com/willhunt914/CirclePython#Moter_Control
+### Reflection
+make sure you] double checking your wiring before you plug in the bateries so you dont fry anything or have magic smoke. For the diodes the power flows in the direction of the silver cap. For the transistor, facing the flat side the power flows from left to right. remember to connect the gnd with a wire
+
+
 ## NextAssignment
 
 ### Description & Code
