@@ -5,7 +5,8 @@ This repository will actually serve as a aid to help you get started with your o
 * [Hello_CircuitPython](#Hello_CircuitPython)
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython_LCD](#CircuitPython_LCD)
-* [NextAssignmentGoesHere](#NextAssignment)
+* [RotaryEncoder](#RotaryEncoder)
+* [Photointerrupter](#Photointerrupter)
 ---
 
 ## Hello_CircuitPython
@@ -336,6 +337,104 @@ https://user-images.githubusercontent.com/112961434/225632084-8f5b42dc-fb0c-4641
 ### Reflection
 this was difficult until my bestfriend cooper let me borrow his code and wiring and video and that made it a whole lot easier.
 
+## RotaryEncoder
+
+### Description & Code
+For this assignment we were told to use a rotary encoder which when integrated with an LCD screen and LED's act as a traffic light.
+
+
+```python
+Code goes here
+##thanks river!
+import rotaryio
+import board
+import digitalio
+import neopixel
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+
+# get and i2c object
+i2c = board.I2C()
+
+# some LCDs are 0x3f... some are 0x27.
+lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
+
+led: neopixel.Neopixel = neopixel.NeoPixel(board.NEOPIXEL, 1) # initialization of hardware
+print("neopixel")
+
+led.brightness = 0.1
+
+button = digitalio.DigitalInOut(board.D12)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.UP
+
+colors = [("stop", (255, 0, 0)), ("caution", (128, 128, 0)), ("go", (0, 255, 0))]
+
+encoder = rotaryio.IncrementalEncoder(board.D10, board.D9, 2)
+last_position = None
+while True:
+    position = encoder.position
+    if last_position is None or position != last_position:
+        lcd.clear()
+        lcd.print(colors[position % len(colors)][0])
+    if(not button.value):
+        led[0] = colors[position % len(colors)][1]
+    last_position = position
+
+```
+
+### Evidence
+https://rivques.github.io/docs/trafficlight.gif
+link to a working video (mine wouldn't fit)
+### Wiring
+![image](https://user-images.githubusercontent.com/112961434/227950893-17176ca7-6371-4b56-a795-afd7f4071b63.png)
+
+### Reflection
+I’m really proud of how I did the menu logic for this project. The encoder library gives a position in “clicks from startup position.” I have a list of menu strings and colors, like this:
+
+colors = [("stop", (255, 0, 0)), ("caution", (128, 128, 0)), ("go", (0, 255, 0))]
+Then, to get the color I should be using, I can simply take the element of the list at encoder.position % len(colors). This will smoothly loop around the list. Also, once again, our hardware is not quite the default configuration. This means in the initialization of the encoder library I have to set the divisor argument of the rotaryio.IncrementalEncoder to 2 instead of 4.
+
+## Photointerrupter
+
+### Description & Code
+Use a photinerrupter and track the amount of interrupts on an LCD screen.
+
+
+```python
+Code goes here
+import time #imports
+import rotaryio
+import board
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+from digitalio import DigitalInOut, Direction, Pull
+
+i2c = board.I2C()
+lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16) #identify LCD screen
+
+photoint = DigitalInOut(board.D7) #identify photointerrupter
+photoint.pull =Pull.UP #pull up photointerrupter
+counter = 0 #create counter set to zero
+
+while True:
+    if photoint.value == True: #if photointerrupter 
+        counter = counter + 1 #add to counter
+        lcd.clear()
+        lcd.color = [0, 100, 0]
+        lcd.set_cursor_pos(0, 0) #set lcd cursor position
+        lcd.print("Interrupts:" + str(counter)) #print interrupts and counter on lcd
+        time.sleep(.5) #0.5sec delay
+```
+
+### Evidence
+https://user-images.githubusercontent.com/91289646/227621696-b567911c-63c2-4ace-9a62-63967fb9f7ea.PNG
+### Wiring
+![image](https://user-images.githubusercontent.com/112961434/227956549-a2832999-d79f-4291-b89f-b64997d88a37.png)
+
+### Reflection
+Thanks nick bendar for help with the wiring and starting the code
+All it requred was creating a counter and initalizing my photointerrupter as well as pulling it up. When the photointerrupter is interrupted the counter goes up by one. it was kinda like an assignment we did earlier.
 ## NextAssignment
 
 ### Description & Code
