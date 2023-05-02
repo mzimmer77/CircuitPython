@@ -56,7 +56,7 @@ Image credit goes to matthias
 https://www.tinkercad.com/things/l74pWa2Bojx-brave-turing/editel?tenant=circuits
 
 ### Reflection
-I got some help from Mr H in order to learn python and vscode.
+I got some help from Mr H in order to learn python and vscode. I also forgot to have the library and you should remember to insert the library for neopixel.
 
 
 
@@ -104,7 +104,7 @@ https://user-images.githubusercontent.com/112961434/193046467-25b1430d-01c0-4595
 ![image](https://user-images.githubusercontent.com/112961434/192555694-4ad0eed2-1c11-4fa1-b789-35e882e869b6.png)
 Kattni Rembor, Jeff Epler, Carter Nelson, lady ada
 ### Reflection
-it was a lot more challenging to use a servo because I had to rememeber how to wire and use a servo but google was my friend.
+it was a lot more challenging to use a servo because I had to rememeber how to wire and use a servo but google was my friend. Again, make sure you have the correct libraries for servos in there. Additionally, having it go 5 degrees at a time is crucial.
 
 
 ## UltraSonic Senor
@@ -167,7 +167,7 @@ Image credit goes to matthias
 ![193045742-26a5ac02-6881-416c-9d54-af293deceae0](https://user-images.githubusercontent.com/112961434/193048819-4750fa1a-3b1d-4859-a733-ea9df81ee28b.png)
 elias https://github.com/egarcia28/CircuitPython
 ### Reflection
-this assignment was difficult because of the fading of the light
+this assignment was difficult because of the fading of the light and finding the right fade. the colors also have to be right if you want to make a rainbow. Using maap functions may be difficult but it makes everything a lot smoother.
 
 
 ## CircuitPython_LCD
@@ -176,54 +176,52 @@ this assignment was difficult because of the fading of the light
 
 ```python
 Code goes here
-#Grant Gastinger https://github.com/ggastin30/CPython
-#lcdAssignment based off 
-#Uses an LCD to display the amount of times a button is clicked. Reverses if switch is flipped.
-
+Grant Gastinger https://github.com/ggastin30/CPython
+Import necessary libraries
 import board
 from lcd.lcd import LCD
 from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
 import time
 from digitalio import DigitalInOut, Direction, Pull
 
-# get and i2c object
-i2c = board.I2C()
-btn = DigitalInOut(board.D2)
+Initialize input/output pins and variables
+i2c = board.I2C() # Create an I2C object
+btn = DigitalInOut(board.D2) # Initialize the button
 btn.direction = Direction.INPUT
 btn.pull = Pull.UP
-clickCount = 0
+clickCount = 0 # Initialize the click count to 0
 
-switch = DigitalInOut(board.D7)
+switch = DigitalInOut(board.D7) # Initialize the switch
 switch.direction = Direction.INPUT
 switch.pull = Pull.UP
 
-# some LCDs are 0x3f... some are 0x27...
+Initialize LCD object and display name
 lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
+lcd.print("Matthias")
 
-lcd.print("Grant")
-
+Main loop
 while True:
-    if not switch.value:
-        if not btn.value:
-            lcd.clear()
-            lcd.set_cursor_pos(0, 0)
-            lcd.print("Click Count:")
-            lcd.set_cursor_pos(0,13)
-            clickCount = clickCount + 1
-            lcd.print(str(clickCount))
-        else:
-            pass
-    else:
-        if not btn.value:
-            lcd.clear()
-            lcd.set_cursor_pos(0, 0)
-            lcd.print("Click Count:")
-            lcd.set_cursor_pos(0,13)
-            clickCount = clickCount - 1
-            lcd.print(str(clickCount))
-        else:
-            pass
-    time.sleep(0.1) # sleep for debounce
+if not switch.value: # Check if the switch is flipped
+if not btn.value: # Check if the button is pressed
+lcd.clear() # Clear the screen
+lcd.set_cursor_pos(0, 0) # Set the cursor to the top left corner
+lcd.print("Click Count:") # Print the title
+lcd.set_cursor_pos(0,13) # Set the cursor to the 14th position on the first row
+clickCount = clickCount + 1 # Increment click count
+lcd.print(str(clickCount)) # Print the updated click count
+else:
+pass
+else:
+if not btn.value: # Check if the button is pressed
+lcd.clear() # Clear the screen
+lcd.set_cursor_pos(0, 0) # Set the cursor to the top left corner
+lcd.print("Click Count:") # Print the title
+lcd.set_cursor_pos(0,13) # Set the cursor to the 14th position on the first row
+clickCount = clickCount - 1 # Decrement click count
+lcd.print(str(clickCount)) # Print the updated click count
+else:
+pass
+time.sleep(0.1) # Sleep for debounce. This is to make sure we don't register multiple clicks.
 ```
 
 ### Evidence
@@ -236,7 +234,7 @@ https://user-images.githubusercontent.com/112961434/193046801-679b4d02-3eee-4f74
 ![193033429-e5198fd6-79fd-4952-a702-64e0c3bba90c](https://user-images.githubusercontent.com/112961434/193047265-43d4e611-0c68-453c-8ac3-ebb8ee76e326.png)
 ###thanks elias https://github.com/egarcia28/CircuitPython
 ### Reflection
-this was by far the hardest assignment but I had done something like this last year and my prior knowledge along with the help of classmates gave me what I needed to understand and complete the assignment.
+this was by far the hardest assignment but I had done something like this last year and my prior knowledge along with the help of classmates gave me what I needed to understand and complete the assignment. Make sure you have LCD library. Having the position of where it started was just as important.
 
 
 
@@ -282,7 +280,7 @@ make sure you] double checking your wiring before you plug in the bateries so yo
 we had to use a tempature sensor and an LCD to display it.
 ```python
 Code goes here
-#code from coper
+#code from wmorela54
 import board
 import analogio
 import time
@@ -335,7 +333,7 @@ https://user-images.githubusercontent.com/112961434/225632084-8f5b42dc-fb0c-4641
 ![image](https://user-images.githubusercontent.com/112961434/225632332-c6d4f69d-ae26-435a-8255-7c3c73feb427.png)
 (credit cooper)
 ### Reflection
-this was difficult until my bestfriend cooper let me borrow his code and wiring and video and that made it a whole lot easier.
+this was difficult until my bestfriend cooper let me borrow his code and wiring and video and that made it a whole lot easier. Having different points makes it easier to find a error or to see tempature. The delay is just as important and helps you get good readings.
 
 ## RotaryEncoder
 
