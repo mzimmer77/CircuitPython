@@ -175,6 +175,12 @@ this assignment was difficult because of the fading of the light and finding the
 
 ### Description & Code
 
+Use your fancy new LCD screen for output and make two inputs (buttons, switches, capacitive touch??)  
+Tripping one of the inputs will cause your Metro to count and that count will be displayed on the LCD. 
+Touching the other input should toggle whether your Metro is counting up or down. 
+The count direction should also be displayed on the LCD.
+
+
 ```python
 Code goes here
 Grant Gastinger https://github.com/ggastin30/CPython
