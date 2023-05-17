@@ -168,7 +168,7 @@ Image credit goes to matthias
 ![193045742-26a5ac02-6881-416c-9d54-af293deceae0](https://user-images.githubusercontent.com/112961434/193048819-4750fa1a-3b1d-4859-a733-ea9df81ee28b.png)
 elias https://github.com/egarcia28/CircuitPython
 ### Reflection
-this assignment was difficult because of the fading of the light and finding the right fade. the colors also have to be right if you want to make a rainbow. Using maap functions may be difficult but it makes everything a lot smoother.
+this assignment was difficult because of the fading of the light and finding the right fade. the colors also have to be right if you want to make a rainbow. Using map functions may be difficult but it makes everything a lot smoother.
 
 
 ## CircuitPython_LCD
@@ -395,11 +395,8 @@ link to a working video (mine wouldn't fit)
 ![image](https://user-images.githubusercontent.com/112961434/227950893-17176ca7-6371-4b56-a795-afd7f4071b63.png)
 
 ### Reflection
-I’m really proud of how I did the menu logic for this project. The encoder library gives a position in “clicks from startup position.” I have a list of menu strings and colors, like this:
-
-colors = [("stop", (255, 0, 0)), ("caution", (128, 128, 0)), ("go", (0, 255, 0))]
-Then, to get the color I should be using, I can simply take the element of the list at encoder.position % len(colors). This will smoothly loop around the list. Also, once again, our hardware is not quite the default configuration. This means in the initialization of the encoder library I have to set the divisor argument of the rotaryio.IncrementalEncoder to 2 instead of 4.
-
+This assignment was very difficult for me and so I ended up using rivers code to help me with the assignment.
+The rotary encoder code enables the light to change colors based on the rotation of the encoder. By mapping the encoder's movements to different color values, each rotation triggers a color transition. this, combined with utilizing the LCD to see where I was made it easier.
 ## Photointerrupter
 
 ### Description & Code
@@ -438,8 +435,8 @@ https://user-images.githubusercontent.com/91289646/227621696-b567911c-63c2-4ace-
 ![image](https://user-images.githubusercontent.com/112961434/227956549-a2832999-d79f-4291-b89f-b64997d88a37.png)
 
 ### Reflection
-Thanks nick bendar for help with the wiring and starting the code
-All it requred was creating a counter and initalizing my photointerrupter as well as pulling it up. When the photointerrupter is interrupted the counter goes up by one. it was kinda like an assignment we did earlier.
+Thanks nick bendar for help with the wiring and the code.
+The code implemented a counter that incremented each time the photointerrupter's beam was interrupted by a piece of paper. The count was then displayed on an LCD screen, providing a real-time visual representation of the number of interruptions, allowing for convenient monitoring and tracking. It was important to set the LCD screen in the right place so that it starts on the left or so you can see it at all!
 ## NextAssignment
 
 ### Description & Code
