@@ -175,7 +175,7 @@ this assignment was difficult because of the fading of the light and finding the
 
 ### Description & Code
 
-Using an LCD screen to count the number of times a button has been pressed.
+Using an LCD screen to count the number of times a button has been pressed. wiring up the LCD right is important and there are [websites](https://docs.arduino.cc/learn/electronics/lcd-displays) to help you. Additionally, debouncing the button gets the click # right.
 
 
 ```python
@@ -238,7 +238,7 @@ https://user-images.githubusercontent.com/112961434/193046801-679b4d02-3eee-4f74
 ![193033429-e5198fd6-79fd-4952-a702-64e0c3bba90c](https://user-images.githubusercontent.com/112961434/193047265-43d4e611-0c68-453c-8ac3-ebb8ee76e326.png)
 ###thanks elias https://github.com/egarcia28/CircuitPython
 ### Reflection
-this was by far the hardest assignment but I had done something like this last year and my prior knowledge along with the help of classmates gave me what I needed to understand and complete the assignment. Make sure you have LCD library. Having the position of where it started was just as important.
+this was by far the hardest assignment but I had done something like this last year and my prior knowledge along with the help of classmates gave me what I needed to understand and complete the assignment. Make sure you have LCD library. Having the position of where it started was just as important. Along with the debounce and the time.sleep which made it easy to only register 1 click.
 
 
 
@@ -370,7 +370,7 @@ button = digitalio.DigitalInOut(board.D12)
 button.direction = digitalio.Direction.INPUT
 button.pull = digitalio.Pull.UP
 
-colors = [("stop", (255, 0, 0)), ("caution", (128, 128, 0)), ("go", (0, 255, 0))]
+colors = [("stop", (255, 0, 0)), ("caution", (128, 128, 0)), ("go", (0, 255, 0))] #mapping the colors
 
 encoder = rotaryio.IncrementalEncoder(board.D10, board.D9, 2)
 last_position = None
