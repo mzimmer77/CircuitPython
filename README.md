@@ -342,7 +342,7 @@ this was difficult until my bestfriend cooper let me borrow his code and wiring 
 ## RotaryEncoder
 
 ### Description & Code
-For this assignment we were told to use a rotary encoder which when integrated with an LCD screen and LED's act as a traffic light.
+For this assignment we were told to use a rotary encoder which when integrated with an LCD screen and LED's act as a traffic light. The rotary encoder code facilitates color changes in response to its rotation. By assigning specific color values to different encoder movements, each rotation triggers a smooth transition between colors, providing an interactive visual experience.
 
 
 ```python
@@ -395,7 +395,7 @@ link to a working video from [river](https://github.com/rivques/CircuitPython)  
 
 ### Reflection
 This assignment was very difficult for me and so I ended up using rivers code to help me with the assignment.
-The rotary encoder code enables the light to change colors based on the rotation of the encoder. By mapping the encoder's movements to different color values, each rotation triggers a color transition. this, combined with utilizing the LCD to see where I was made it easier.
+The rotary encoder code enables the light to change colors based on the rotation of the encoder. By mapping the encoder's movements to different color values, each rotation triggers a color transition. this, combined with utilizing the LCD to see where I was made it easier. One challenge faced during development was an incorrect I2C address assumption for the LCD module. The code initially used an address of 0x27, but the module's actual address was 0x3F. This caused communication errors and prevented the LCD from displaying correctly. The issue was resolved by correcting the I2C address in the code, ensuring proper communication and LCD functionality.
 ## Photointerrupter
 
 ### Description & Code
