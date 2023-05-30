@@ -347,7 +347,7 @@ For this assignment we were told to use a rotary encoder which when integrated w
 
 ```python
 Code goes here
-##thanks river!
+##thanks river! https://github.com/rivques/CircuitPython
 import rotaryio
 import board
 import digitalio
@@ -387,7 +387,7 @@ while True:
 
 ### Evidence
 https://rivques.github.io/docs/trafficlight.gif
-link to a working video (mine wouldn't fit)
+link to a working video from [river](https://github.com/rivques/CircuitPython)  (mine wouldn't fit)
 ### Wiring
 ![image](https://user-images.githubusercontent.com/112961434/227950893-17176ca7-6371-4b56-a795-afd7f4071b63.png)
 
